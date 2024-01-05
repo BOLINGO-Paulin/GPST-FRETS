@@ -1,25 +1,24 @@
-<?php 
-include('mesFonctions.php');
-echo($_SESSION['appel']);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Modern Admin Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 </head>
-<body>
-   <input type="checkbox" id="menu-toggle">
+
+<body onload="loadPage('Views/Acceuil.php', document.querySelector('.animated-link:first-child'))">
+
+    <input type="checkbox" id="menu-toggle">
+
     <div class="sidebar">
         <div class="side-header">
-            <h3>M<span>odern</span></h3>
+            <h3>Utilisateur<span> Connecté</span></h3>
         </div>
         
         <div class="side-content">
+
             <div class="profile">
                 <div class="profile-img bg-img" style="background-image: url(img/3.jpeg)"></div>
                 <h4>David Green</h4>
@@ -29,51 +28,68 @@ echo($_SESSION['appel']);
             <div class="side-menu">
                 <ul>
                     <li>
-                       <a href="<?php maFonction1(); ?>" class="active">
+                        <a href="#" class="animated-link" onclick="loadPage('Views/Acceuil.php', this)">
                             <span class="las la-home"></span>
-                            <small>Dashboard<?php echo('  ');echo($_SESSION['appel']); ?></small>
+                            <small>Acceuil</small>
                         </a>
                     </li>
                     <li>
-                       <a href="<?php maFonction1(); ?>">
-                            <span class="las la-user-alt"></span>
-                            <small>Profile <?php echo('  ');echo($_SESSION['appel']); ?> </small>
+                        <a href="#" class="animated-link" onclick="loadPage('Views/Depart.php', this)">
+                            <span class="las la-arrow-circle-left"></span>
+                            <small>Depart</small>
                         </a>
                     </li>
                     <li>
-                       <a href="<?php maFonction1(); ?>">
-                            <span class="las la-envelope"></span>
-                            <small>Mailbox</small>
+                        <a href="#" class="animated-link" onclick="loadPage('Views/Arriver.php', this)">
+                            <span class="las la-arrow-circle-right"></span>
+                            <small>Arriver</small>
                         </a>
                     </li>
                     <li>
-                       <a href="<?php maFonction4(); ?>">
-                            <span class="las la-clipboard-list"></span>
-                            <small>Projects</small>
+                        <a href="#" class="animated-link" onclick="loadPage('Views/Expedier.php', this)">
+                            <span class="las la-truck"></span>
+                            <small>Expedier</small>
                         </a>
                     </li>
                     <li>
-                       <a href="<?php maFonction5(); ?>">
-                            <span class="las la-shopping-cart"></span>
-                            <small>Orders</small>
+                        <a href="#" class="animated-link" onclick="loadPage('Views/Retirer.php', this)">
+                            <span class="las la-times-circle"></span>
+                            <small>Retirer</small>
                         </a>
                     </li>
-                    
                     <li>
-                       <a href="<?php maFonction5(); ?>">
-                            <span class="las la-tasks"></span>
-                            <small>Tasks</small>
+                        <a href="#" class="animated-link" onclick="loadPage('Views/Infos.php', this)">
+                            <span class="las la-info"></span>
+                            <small>Infos</small>
                         </a>
                     </li>
-                    
+                    <!-- Ajoutez d'autres liens ici avec les appels de fonction loadPage appropriés -->
                 </ul>
             </div>
         </div>
     </div>
-    
+
     <!-- le maincontent begin -->
-       
+    <div class="main-content" id="main-content">
+    </div>
     <!-- le maincontent end-->
 
+    <script>
+        function loadPage(page, element) {
+            var links = document.querySelectorAll('.animated-link');
+            links.forEach(link => link.classList.remove('active'));
+            
+            element.classList.add('active');
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("main-content").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", page, true);
+            xhttp.send();
+        }
+    </script>
 </body>
 </html>

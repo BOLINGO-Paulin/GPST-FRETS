@@ -1,42 +1,41 @@
-<div class="main-content">
-        
-        <header>
-            <div class="header-content">
-                <label for="menu-toggle">
-                    <span class="las la-bars"></span>
+
+<header>
+        <div class="header-content">
+            <label for="menu-toggle">
+                <span class="las la-bars"></span>
+            </label>
+            
+            <div class="header-menu">
+                <label for="">
+                    <span class="las la-search"></span>
                 </label>
                 
-                <div class="header-menu">
-                    <label for="">
-                        <span class="las la-search"></span>
-                    </label>
+                <div class="notify-icon">
+                    <span class="las la-envelope"></span>
+                    <span class="notify">4</span>
+                </div>
+                
+                <div class="notify-icon">
+                    <span class="las la-bell"></span>
+                    <span class="notify">3</span>
+                </div>
+                
+                <div class="user">
+                    <div class="bg-img" style="background-image: url(img/1.jpeg)"></div>
                     
-                    <div class="notify-icon">
-                        <span class="las la-envelope"></span>
-                        <span class="notify">4</span>
-                    </div>
-                    
-                    <div class="notify-icon">
-                        <span class="las la-bell"></span>
-                        <span class="notify">3</span>
-                    </div>
-                    
-                    <div class="user">
-                        <div class="bg-img" style="background-image: url(img/1.jpeg)"></div>
-                        
-                        <span class="las la-power-off"></span>
-                        <span>Logout</span>
-                    </div>
+                    <span class="las la-power-off"></span>
+                    <span>Logout</span>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
         
         
         <main>
             
             <div class="page-header">
-                <h1>Dashboard</h1>
-                <small>Home / Projets</small>
+                <h1>Information general</h1>
+                <small>Home / Infos</small>
             </div>
             
             <div class="page-content">
@@ -392,5 +391,3 @@
             </div>
             
         </main>
-        
-    </div>
