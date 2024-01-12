@@ -1,5 +1,3 @@
-<?php include('header.php')?>
-
 <!doctype html>
 <html lang="en">
   		<head>
@@ -81,11 +79,14 @@
 													<th>90r parkdground poland Usa.</th>
 													<th>(78-582552-9)</th>
 													<th>
-														<a href="#editEmployeeModal" class="edit" data-toggle="modal">
+													<a href="#editEmployeeModal" class="edit" data-toggle="modal">
 													<i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
 													</a>
 													<a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
 													<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+													</a>
+													<a href="#addEmployeeModal" class="add btn btn-success" data-toggle="modal">
+    												<i class="material-icons" data-toggle="tooltip" title="Add">&#xE147;</i>
 													</a>
 													</th>
 											</tr>

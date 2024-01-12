@@ -20,7 +20,6 @@
 	
 	   <!--google material icon-->
       <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
-      
 </head>
 
 <body onload="loadPage('Views/Acceuil.php', document.querySelector('.animated-link:first-child'))">
